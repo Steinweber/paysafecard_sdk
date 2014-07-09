@@ -70,7 +70,7 @@ $parameter = array(
  	'close' => '1');
 ```
 
-Set the parameter. With a shopsystem, load the data (amount,currency) from database by mtid and order_id from GET
+Execute the payment
 ```php
 if ($execute->execute($parameter))
  {
