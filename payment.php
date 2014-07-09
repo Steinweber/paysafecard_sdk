@@ -18,7 +18,6 @@
  if (!$result)
  {
  	echo $payment->getCustomerInfo();
- 	echo '<br />' . $payment->getError();
  }
  else
  {

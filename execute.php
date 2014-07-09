@@ -17,4 +17,3 @@
  	// hier den useraccount topup -EXECUTE DEBIT SUCCESSFUL- !!!
  }
  echo $execute->getCustomerInfo();
- echo '<br />' . $execute->getError();
