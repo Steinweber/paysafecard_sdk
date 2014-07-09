@@ -1,0 +1,7 @@
+﻿
+[2014-07-08 22:24:52] getSerialNumbers konnte nicht erfolgreich ausgeführt werden. resultCode: 1 | errorCode: 2002
+ [2014-07-08 22:24:53] getSerialNumbers konnte nicht erfolgreich ausgeführt werden. resultCode: 1 | errorCode: 2002
+ [2014-07-08 22:30:32] asd
+ [2014-07-08 22:30:50] getSerialNumbers konnte nicht erfolgreich ausgeführt werden. resultCode: 1 | errorCode: 2002
+ [2014-07-09 08:24:12] asd
+ 
