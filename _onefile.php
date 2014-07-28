@@ -33,9 +33,9 @@ new Loader('payment');
  		'currency' => $currency,
  		'mtid' => $mtid,
  		'merchantClientId' => '3256',
- 		'okUrl' => 'http://188.194.170.38/test.php?ok=1&mtid=' . $mtid,
- 		'nokUrl' => 'http://188.194.170.38/test.php?nok',
- 		'pnUrl' => 'http://188.194.170.38/test.php?pn=1&mtid=' . $mtid);
+ 		'okUrl' => 'http://example.com/test.php?ok=1&mtid=' . $mtid,
+ 		'nokUrl' => 'http://example.com/test.php?nok',
+ 		'pnUrl' => 'http://example.com/test.php?pn=1&mtid=' . $mtid);
  	$result = $payment->newPayment($transaction);
  	if (!$result)
  	{
