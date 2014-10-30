@@ -1,7 +1,7 @@
 paysafecard_sdk
 ===============
 Please note:
-This is not the official SDK of the paysafecard AG
+This is not the official SDK of the paysafecard GmbH
 
 Usage
 ============
