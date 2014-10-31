@@ -1,21 +1,19 @@
-<?php 
-include_once '_config.php'; 
-
-$dir = __DIR__.'/';
-$helper = glob($dir.'helper/*.php');
+<?php
+require_once '_config.php';
+$helper = glob(DIR_HELPER_GLOBAL.'*.php');
 foreach($helper as $function)
 {
-    include_once str_replace($dir,'',$function);
+    include_once $function;
 }
 
 final class Loader
 {
     public function __construct($loadClass)
     {
-        if(file_exists(__DIR__.'/function/'.$loadClass.'/loader.php'))
+        include_once DIR_FUNCTION.'base.php';
+        if(file_exists(DIR_FUNCTION.$loadClass.'/loader.php'))
         {
-            include_once __DIR__.'/function/'.$loadClass.'/loader.php';
+            include_once DIR_FUNCTION.$loadClass.'/loader.php';
         }
     }
-    
 }

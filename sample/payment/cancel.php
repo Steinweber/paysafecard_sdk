@@ -1,6 +1,6 @@
 <?php
 
- include_once ('src/loader.php');
+ include_once('../../src/loader.php');
  new Loader('payment');
  if (!isset($_GET['nok']))
  {

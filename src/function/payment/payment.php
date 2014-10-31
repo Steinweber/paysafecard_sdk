@@ -9,8 +9,7 @@ class payment extends paysafecard_base
         if($mode)
         {
             $this->setMode($mode);
-        }   
-        $this->registry->debug->_debug('asd');
+        }
     }
     
     public function newPayment($parameter)

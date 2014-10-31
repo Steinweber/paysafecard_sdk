@@ -1,5 +1,5 @@
 <?php
- include_once ('src/loader.php');
+ include_once('../../src/loader.php');
  $amount = '30.20';
  $currency = 'EUR';
  $mtid = 'psc_test' . rand(0, 9999999) . '_' . rand(0, 99999999);
@@ -33,9 +33,9 @@ new Loader('payment');
  		'currency' => $currency,
  		'mtid' => $mtid,
  		'merchantClientId' => '3256',
- 		'okUrl' => 'http://example.com/_onefile.php?ok=1&mtid=' . $mtid,
- 		'nokUrl' => 'http://example.com/_onefile.php?nok',
- 		'pnUrl' => 'http://example.com/_onefile.php?pn=1&mtid=' . $mtid);
+ 		'okUrl' => DOMAIN.'payment/_onefile.php?ok=1&mtid=' . $mtid,
+ 		'nokUrl' => DOMAIN.'payment/_onefile.php?nok',
+ 		'pnUrl' => DOMAIN.'payment/_onefile.php?pn=1&mtid=' . $mtid);
  	$result = $payment->newPayment($transaction);
  	if (!$result)
  	{

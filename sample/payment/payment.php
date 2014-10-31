@@ -1,6 +1,6 @@
 <?php
 
- include_once ('src/loader.php');
+ include_once('../../src/loader.php');
  new Loader('payment');
  $amount = '30.20';
  $currency = 'EUR';
@@ -11,9 +11,9 @@
  	'currency' => $currency,
  	'mtid' => $mtid,
  	'merchantClientId' => '3256',
- 	'okUrl' => 'http://example.com/_onefile.php?ok=1&mtid=' . $mtid .'&currency=' . $currency . '&amount=' . $amount,
- 	'nokUrl' => 'http://example.com/_onefile.php?nok',
- 	'pnUrl' => 'http://example.com/_onefile.php?pn=1&mtid=' . $mtid .'&currency=' . $currency . '&amount=' . $amount,);
+     'okUrl' => DOMAIN.'payment/_onefile.php?ok=1&mtid=' . $mtid,
+     'nokUrl' => DOMAIN.'payment/_onefile.php?nok',
+     'pnUrl' => DOMAIN.'payment/_onefile.php?pn=1&mtid=' . $mtid);
  $result = $payment->newPayment($transaction);
  if (!$result)
  {

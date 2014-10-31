@@ -1,18 +1,18 @@
 <?php
 class Api{
-    protected $_data = array();
-    protected $_registry;
-    protected $_settings = array();
     public $client=NULL;
     public $result;
     public $error;
+    protected $_data = array();
+    protected $_registry;
+    protected $_settings = array();
     
     public function __construct($_registry)
     {
         $this->_registry = $_registry;        
         
     }
-    
+
     public function newClient($reinit=false)
 	{
 	   if($this->client && $reinit==false)
@@ -31,20 +31,6 @@ class Api{
             return false;
 		}
 	}
-    
-    public function action($action,$parameter)
-    {
-        try
-		{
-			$this->result = $this->client->{$action}($parameter);
-            return true;
-		}
-		catch ( SoapFault $e )
-		{
-			$this->error = $e->getMessage();
-            return false;
-		}        
-    }
     
     private function soapInit()
 	{
@@ -65,7 +51,7 @@ class Api{
 			ini_set( "soap.wsdl_cache_enabled", '0' );
 			ini_set( "soap.wsdl_cache_ttl", '0' );
 			$wsdl = array(
-				'user_agent' => 'paysafecard payment class(testmode) v1.0',
+				'user_agent' => 'steinweber UG class(testmode) v1.1',
 				'trace' => true,
 				'exceptions' => true,
 				'cache_wsdl' => WSDL_CACHE_NONE );
@@ -73,11 +59,25 @@ class Api{
 		else
 		{
 			$wsdl = array(
-				'user_agent' => 'paysafecard payment class v1.0',
+				'user_agent' => 'steinweber UG class v1.1',
 				'trace' => false,
 				'exceptions' => false );
 		}
 		$this->_settings = array_merge( $this->_settings, $wsdl );
 	}
+    
+    public function action($action,$parameter)
+    {
+        try
+		{
+			$this->result = $this->client->{$action}($parameter);
+            return true;
+		}
+		catch ( SoapFault $e )
+		{
+			$this->error = $e->getMessage();
+            return false;
+		}
+    }
     
 }

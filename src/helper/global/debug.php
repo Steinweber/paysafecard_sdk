@@ -6,7 +6,7 @@ class Debug{
     public function __construct($_registry)
     {
         $this->_status = $_registry->config->get('DebugStatus');
-        $this->_logFile = __DIR__.'/../'.$_registry->config->get('LogFile');
+        $this->_logFile = DIR_LOG.$_registry->config->get('LogFile');
     }
     
     public function _debug($message, $data = array())

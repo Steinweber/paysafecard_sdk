@@ -1,5 +1,4 @@
-<?php 
-include_once __DIR__.'/base.php';
+<?php
 include_once __DIR__.'/payment.php';
 include_once __DIR__.'/payment_execute.php';
 include_once __DIR__.'/payment_cancel.php';

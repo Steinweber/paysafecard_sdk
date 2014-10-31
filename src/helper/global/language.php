@@ -8,7 +8,7 @@ class Language{
     public function __construct($_registry)
     {
         $this->_registry = $_registry;    
-        $this->_dir = __DIR__.'/../function/'.$this->_registry->config->get('LoadedClass').'/language/';
+        $this->_dir = DIR_FUNCTION.$this->_registry->config->get('LoadedClass').'/language/';
         $languages = glob($this->_dir.'*', GLOB_ONLYDIR);
         $allowedLanguages = array();
         foreach($languages as $language)
@@ -18,10 +18,6 @@ class Language{
         $this->_registry->config->set('AllowedLanguages',$allowedLanguages);
         $this->load();
     }
-    
-    public function get($key) {
-		return (isset($this->_data[$key]) ? $this->_data[$key] : $key);
-	}
     
     public function load($filename=false) {
         $filename = $filename?$filename:$this->_registry->config->get('Language');
@@ -35,9 +31,13 @@ class Language{
 
 			return $this->_data;
 		}
-        else 
+        else
         {
 			trigger_error('Error: Could not load language ' . $filename . '!');
 		}
+	}
+    
+    public function get($key) {
+		return (isset($this->_data[$key]) ? $this->_data[$key] : $key);
 	}
 }

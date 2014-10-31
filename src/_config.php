@@ -1,33 +1,14 @@
 <?php
-class Config{
-    protected $data = array(
-        //Domains
-        'ApiWsdlSandbox' => 'https://soatest.paysafecard.com/psc/services/PscService?wsdl',
-        'PaymentPanelSandbox' => 'https://customer.test.at.paysafecard.com/psccustomer/GetCustomerPanelServlet',
-        'ApiWsdlProductive' => 'https://soa.paysafecard.com/psc/services/PscService?wsdl',
-        'PaymentPanelProductive' => 'https://customer.cc.at.paysafecard.com/psccustomer/GetCustomerPanelServlet',        
-        //File
-        'LogFile' => 'log/log.txt',
-        //Settings
-        'DebugStatus' => true, 
-        'Language' => 'de',
-        'Mode' => 'test',
-        //Access
-        'Merchant' => array('username'=>'xxx','password'=>'xxx'),
-    );
-    
-    public function get($key)
-    {
-        return $this->data[$key];
-    }    
-    
-    public function has($key)
-    {
-        return isset($this->data[$key]);
-    }
-    
-    public function set($key,$value)
-    {
-        $this->data[$key] = $value;
-    }
-}
+error_reporting( E_ALL );
+if(phpversion() < 5){ DIE('PHP satisfied with the version '.phpversion().' not the requirement');}
+if(!in_array('soap',get_loaded_extensions())){ echo 'The php_soap.dll was not loaded.'; exit;}
+header( "Content-Type: text/html; charset=utf-8" );
+
+
+//System
+define('DIR_APP',__DIR__.'/');
+define('DIR_FUNCTION',__DIR__.'/function/');
+define('DIR_HELPER_GLOBAL',__DIR__.'/helper/global/');
+define('DIR_LOG',__DIR__.'/log/');
+//Usage
+define('DOMAIN','http://127.0.0.1:8080/sample/');
