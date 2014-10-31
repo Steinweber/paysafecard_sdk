@@ -26,7 +26,7 @@ new Loader('payment');
     echo $cancel->getCustomerInfo();
  }
  else//new Payment
- { 	
+ {
  	$payment = new payment('test');
  	$transaction = array(
  		'amount' => $amount,
@@ -47,4 +47,4 @@ new Loader('payment');
  		echo '<a href="' . $result . '"> Zum Bezahlen -> </a>';
  	}
  }
- 
+
