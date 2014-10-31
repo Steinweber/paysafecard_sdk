@@ -11,4 +11,4 @@ $_['DebugStatus'] = true;
 $_['Language'] = 'de';
 $_['Mode'] = 'test';
 //Access
-$_['Merchant'] = array('username' => 'psc_payout_test', 'password' => 'nYDiP9z7BnHRM');
+$_['Merchant'] = array('username' => '', 'password' => '');
